@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Users List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Account Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Related User</th>
+                <th>Full Name</th>
+                <th>Student Number</th>
+                <th>Created By</th>
+                <th>Created Date</th>
+                <th>Updated By</th>
+                <th>Updated Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in data_list %}
+            <tr>
+                <td>{{ user.account_user_id }}</td>
+                <td>{{ user.account_user_related_user }}</td>
+                <td>{{ user.account_user_fullname }}</td>
+                <td>{{ user.account_user_student_number }}</td>
+                <td>{{ user.account_user_created_by }}</td>
+                <td>{{ user.account_user_created_date }}</td>
+                <td>{{ user.account_user_updated_by }}</td>
+                <td>{{ user.account_user_updated_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
